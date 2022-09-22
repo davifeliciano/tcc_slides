@@ -1,0 +1,22 @@
+\begin{figure}
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+      \node[start_end] (start) {Início};
+      \node[process, right=1em of start] (init_pop) {População\\ Inicial};
+      \node[process, right=1em of init_pop]  (selection) {Seleção};
+      \node[process, below=1em of selection]  (crossover) {Recombinação};
+      \node[process, below=1em of crossover]  (mutation) {Mutação};
+      \node[decision, below=1em of mutation]  (check) {Condição atingida?};
+      \node[start_end, left=10ex of check] (end) {Fim};
+      \draw[myarrow=.9] (start.east) --  (init_pop.west);
+      \draw[myarrow=.9] (init_pop.east) --  (selection.west);
+      \draw[myarrow=.9] (selection.south) --  (crossover.north);
+      \draw[myarrow=.9] (crossover.south) --  (mutation.north);
+      \draw[myarrow=.9] (mutation.south) -- (check.north);
+      \draw[myarrow=.9] (check.east) -- node[description, above] {Não} ([xshift=10ex]check.east) |- (selection.east);
+      \draw[myarrow=.9] (check.west) -- node[description, above] {Sim} (end.east);
+    \end{tikzpicture}
+  }
+  \caption{\textit{Flowchart} geral de um algoritmo genético.}
+\end{figure}

@@ -1,0 +1,93 @@
+\documentclass{beamer}
+\usepackage{beamerthemesplit}
+\usetheme{Copenhagen}
+\usecolortheme{dolphin}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{nicefrac}
+\usepackage{physics}
+
+% Pacote para formulas químicas
+\usepackage{chemformula}
+
+% Pacote para unidades do SI
+\usepackage{siunitx}
+\sisetup{output-decimal-marker = {,}}
+\sisetup{group-digits=false}
+
+% Pacote para evitar que figuras sejam renderizadas fora da seção correspondente
+\usepackage[section]{placeins}
+
+\usepackage{subcaption}
+\captionsetup{subrefformat=parens}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\trav}{\,---\,}
+\newcommand{\mathperiod}{\;\mathrm{.}}
+\newcommand{\mathcomma}{\;\mathrm{,}}
+\newcommand{\mathdots}{\;\cdots\;}
+\newcommand{\bvec}[1]{\mathbf{#1}}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes.geometric,shapes.symbols,shapes.misc}
+\tikzset{
+  start_end/.style={
+      rectangle,
+      rounded corners,
+      text width=3cm, draw,
+      minimum height=1.3cm,
+      text centered,
+    },
+  process/.style={
+      text width=3cm, draw,
+      minimum height=1.3cm,
+      text centered,
+    },
+  decision/.style={
+      diamond,
+      aspect=2,
+      text width=3cm, draw,
+      minimum height=1.3cm,
+      text centered,
+    },
+  description/.style={
+      text centered,
+      text width=5cm,
+    },
+  myarrow/.style={
+      postaction={
+          decorate, decoration={
+              markings,mark=at position #1 with {\arrow{Stealth};}
+            }
+        }
+    },
+}
+
+\usetikzlibrary{chains,fit,calc,patterns}
+\edef\sizetape{0.7cm}
+\tikzset{
+  gene/.style={
+      draw,
+      minimum size=\sizetape,
+    },
+  gene_filled/.style={
+      draw,
+      fill=black!35,
+      minimum size=\sizetape,
+    },
+  gene_mutated/.style={
+      draw,
+      pattern=north west lines,
+      pattern color=black!25,
+      minimum size=\sizetape,
+    },
+}
