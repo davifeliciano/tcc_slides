@@ -261,7 +261,7 @@
 \end{frame}
 
 \begin{frame}{Ajuste das Bandas dos Cristais \ch{CrS2} e \ch{CrSe2}}
-  \begin{table}[h]
+  \begin{table}
     \centering
     \begin{tabular}{lcc}
       \toprule
@@ -450,6 +450,30 @@
           frequência da luz que incide sobre a monocamada em questão, dada a
           dependência de $\Delta$ com $B$
   \end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusões}
+  \begin{itemize}
+    \item Há uma diferença considerável entre o tempo de execução para o
+          Algoritmo Genético e para o \textit{Dual Annealing}
+    \item Isso sugere uma implementação em linguagens mais rápidas e que
+          permitam uma melhor paralelização do algoritmo, como C, Fortran, Julia ou Go
+  \end{itemize}
+  \begin{table}
+    \centering
+    \begin{tabular}{lcc}
+      \toprule
+                              & 1ª Ordem   & 3ª Ordem   \\
+      \midrule
+      Algoritmo Genético      & 15 minutos & 25 minutos \\
+      \textit{Dual Annealing} & 2 minutos  & 10 minutos \\
+      \bottomrule
+    \end{tabular}
+    \caption{
+      Tempo médio de execução do processo de otimização para o Algoritmo
+      Genético e para o \textit{Dual Annealing}
+    }
+  \end{table}
 \end{frame}
 
 \section{Referências}
